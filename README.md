@@ -1,5 +1,5 @@
-# Data Structures Lab
+# Data Structures and Algorithms Lab
 
 ## TODO
 
-- [ ] Add data structures projects from 2019 to just this reṕo
+- [x] Add data structures projects from 2019 to just this repo

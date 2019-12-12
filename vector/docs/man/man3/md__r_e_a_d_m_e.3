@@ -1,0 +1,75 @@
+.TH "md__r_e_a_d_m_e" 3 "Fri Jul 12 2019" "Version 1.0" "Vector" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_e \- Vector 
+
+.SS "Introduction"
+.PP
+\fCVector\fP is an implementation of a sequence container based in the \fCSTL Vector\fP\&.
+.PP
+.SS "Compiling"
+.PP
+Assuming you have installed \fCCMake\fP, \fCmake\fP, \fCGTest\fP and \fCGit\fP, we can follow these steps:
+.PP
+.IP "1." 4
+Download the project and moves into the root directory ``` git clone https://github.com/imns1ght/vector && cd vector/ ```
+.IP "2." 4
+Create build files ``` cmake -B build/ ```
+.IP "3." 4
+Start the compiling process\&. ``` make install -C build/ ``\fC After that, the library (\fPlibvector\&.a<tt>) it's located inlib/`\&.
+.IP "4." 4
+Create a symlink (shortcut) for the executable\&. ``` ln -sf build/run_tests \&. ```
+.PP
+.PP
+Finally, we have an executable inside the \fCbuild\fP directory that tests the library functions\&. Also, we will have a library \fClibvector\&.a\fP in which the functions are compiled\&.
+.PP
+.SS "Usage"
+.PP
+Just run as usual (assuming \fC$\fP is the terminal prompt):
+.PP
+.PP
+.nf
+\&./run_tests
+.fi
+.PP
+.PP
+.SS "Contributing"
+.PP
+You are welcome! Create the pull requests\&.
+.PP
+For major changes, please, open an issue first to discuss what you would like to change\&.
+.PP
+.SS "Support"
+.PP
+.IP "\(bu" 2
+Twitter: \fC@imns1ght\fP | E-mail: \fCjeffersonbrunoIT [at] gmail [dot] com\fP
+.IP "\(bu" 2
+E-mail \fCRanieriSantos [at] protonmail [dot] com\fP
+.PP
+.PP
+.SS "Authors and acknowledgment"
+.PP
+.SS "Authors"
+.PP
+.IP "\(bu" 2
+\fCJefferson Bruno (imns1ght)\fP
+.IP "\(bu" 2
+\fCRanieri Santos\fP
+.PP
+.PP
+.SS "Acknowledgment"
+.PP
+.IP "\(bu" 2
+\fCProfessor Selan R\&. dos Santos\fP
+.IP "\(bu" 2
+\fCGeeksforGeeks\fP
+.IP "\(bu" 2
+\fCC++ Reference 1\fP
+.IP "\(bu" 2
+\fCC++ Reference 2\fP
+.PP
+.PP
+.SS "License"
+.PP
+\fCMIT\fP 

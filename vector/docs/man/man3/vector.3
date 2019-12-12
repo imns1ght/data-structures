@@ -1,0 +1,827 @@
+.TH "vector< T >" 3 "Fri Jul 12 2019" "Version 1.0" "Vector" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+vector< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vector\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvector\fP ()"
+.br
+.RI "Default constructor: constructs an empty container, with no elements\&. "
+.ti -1c
+.RI "\fBvector\fP (size_t count)"
+.br
+.RI "Constructs an container with count default-inserted instances\&. "
+.ti -1c
+.RI "template<typename InputIt > \fBvector\fP (InputIt first, InputIt last)"
+.br
+.RI "Constructs the container with the contents of the range [first, last)\&. "
+.ti -1c
+.RI "\fBvector\fP (const \fBvector\fP &other)"
+.br
+.RI "Constructs the container with the deep copy of the contents of other\&. "
+.ti -1c
+.RI "\fBvector\fP (std::initializer_list< T > ilist)"
+.br
+.RI "Constructs the container with the contents of the initializer list\&. "
+.ti -1c
+.RI "virtual \fB~vector\fP (void)"
+.br
+.RI "Desconstructor\&. "
+.ti -1c
+.RI "\fBvector\fP & \fBoperator=\fP (const \fBvector\fP &other)"
+.br
+.RI "Copy assignment: copies all the elements from other into the container\&. "
+.ti -1c
+.RI "\fBvector\fP & \fBoperator=\fP (\fBvector\fP &&other)"
+.br
+.RI "Move assignment: moves the elements of other into the container\&. "
+.ti -1c
+.RI "\fBvector\fP & \fBoperator=\fP (std::initializer_list< T > ilist)"
+.br
+.RI "initializer list assignment: copies the elements of il into the container\&. "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBvector\fP &rhs) const"
+.br
+.RI "Checks if the contents of lhs and rhs are equal, that is, they have the same number of elements and each element in lhs compares equal with the element in rhs at the same position\&. "
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBvector\fP &rhs) const"
+.br
+.RI "Checks if the contents of lhs and rhs are equal, that is, they have the same number of elements and each element in lhs compares equal with the element in rhs at the same position\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBbegin\fP (void)"
+.br
+.RI "Return iterator to the beginning\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBend\fP (void)"
+.br
+.RI "Returns iterator to the past-end\&. "
+.ti -1c
+.RI "\fBiterator\fP< const T > \fBcbegin\fP (void) const"
+.br
+.RI "Returns a const_iterator to the beginning\&. "
+.ti -1c
+.RI "\fBiterator\fP< const T > \fBcend\fP (void) const"
+.br
+.RI "Returns a const_iterator to the past-end\&. "
+.ti -1c
+.RI "size_t \fBsize\fP (void) const"
+.br
+.RI "Returns the number of elements in the vector\&. "
+.ti -1c
+.RI "size_t \fBcapacity\fP (void) const"
+.br
+.RI "Returns the size of the storage space currently allocated for the vector\&. "
+.ti -1c
+.RI "bool \fBempty\fP (void) const"
+.br
+.RI "Returns whether the vector is empty\&. "
+.ti -1c
+.RI "void \fBreserve\fP (size_t new_cap)"
+.br
+.RI "Requests that the vector capacity be at least enough to contain n elements\&. "
+.ti -1c
+.RI "void \fBshrink_to_fit\fP (void)"
+.br
+.RI "Requests the container to reduce its capacity to fit its size\&. "
+.ti -1c
+.RI "T & \fBoperator[]\fP (size_t pos)"
+.br
+.RI "Returns a reference to the element at position n in the vector container\&. "
+.ti -1c
+.RI "const T & \fBoperator[]\fP (size_t pos) const"
+.br
+.RI "Returns a const reference to the element at position n in the vector container\&. "
+.ti -1c
+.RI "T & \fBat\fP (size_t pos)"
+.br
+.RI "Returns a reference to the element at position pos in the vector\&. "
+.ti -1c
+.RI "const T & \fBat\fP (size_t pos) const"
+.br
+.RI "Returns a const reference to the element at position pos in the vector\&. "
+.ti -1c
+.RI "T & \fBfront\fP (void)"
+.br
+.RI "Returns a reference to the first element in the vector\&. "
+.ti -1c
+.RI "const T & \fBfront\fP (void) const"
+.br
+.RI "Returns a const reference to the first element in the vector\&. "
+.ti -1c
+.RI "T & \fBback\fP (void)"
+.br
+.RI "Returns a reference to the last element in the vector\&. "
+.ti -1c
+.RI "const T & \fBback\fP (void) const"
+.br
+.RI "Returns a const reference to the last element in the vector\&. "
+.ti -1c
+.RI "void \fBassign\fP (size_t count, const T &value)"
+.br
+.RI "Assign value count times in the container\&. "
+.ti -1c
+.RI "template<typename InputItr > void \fBassign\fP (InputItr first, InputItr last)"
+.br
+.RI "Assign values from [first, last) "
+.ti -1c
+.RI "void \fBassign\fP (const std::initializer_list< T > ilist)"
+.br
+.RI "Assign initializer list content to the container\&. "
+.ti -1c
+.RI "void \fBpush_back\fP (const T &value)"
+.br
+.RI "Insert value to the end of the container\&. "
+.ti -1c
+.RI "void \fBpop_back\fP (void)"
+.br
+.RI "Removes the last element of the container\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBinsert\fP (\fBiterator\fP< T > pos, const T &value)"
+.br
+.RI "Inserts value at position pos\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBinsert\fP (\fBiterator\fP< const T > pos, const T &value)"
+.br
+.RI "Inserts value at position pos\&. "
+.ti -1c
+.RI "template<typename InputItr > \fBiterator\fP< T > \fBinsert\fP (\fBiterator\fP< T > pos, InputItr first, InputItr last)"
+.br
+.RI "Inserts values from range at position pos\&. "
+.ti -1c
+.RI "template<typename InputItr > \fBiterator\fP< T > \fBinsert\fP (\fBiterator\fP< const T > pos, InputItr first, InputItr last)"
+.br
+.RI "Inserts values from range at position pos\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBinsert\fP (\fBiterator\fP< T > pos, const std::initializer_list< T > ilist)"
+.br
+.RI "Inserts values from an initializer list at position pos\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBinsert\fP (\fBiterator\fP< const T > pos, const std::initializer_list< T > ilist)"
+.br
+.RI "Inserts values from an initializer list at position pos\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBerase\fP (\fBiterator\fP< T > pos)"
+.br
+.RI "Removes the object at position pos\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBerase\fP (\fBiterator\fP< const T > pos)"
+.br
+.RI "Removes the object at position pos\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBerase\fP (\fBiterator\fP< T > first, \fBiterator\fP< T > last)"
+.br
+.RI "Removes the range [first, last)\&. "
+.ti -1c
+.RI "\fBiterator\fP< T > \fBerase\fP (\fBiterator\fP< const T > first, \fBiterator\fP< const T > last)"
+.br
+.RI "Removes the range [first, last)\&. "
+.ti -1c
+.RI "void \fBclear\fP (void)"
+.br
+.RI "Removes all elements from the container (which are destroyed), leaving the container with a size of 0\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T>
+.br
+class vector< T >"
+
+.PP
+Definition at line 19 of file vector\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T > \fBvector\fP< T >::\fBvector\fP ()"
+
+.PP
+Default constructor: constructs an empty container, with no elements\&. 
+.PP
+Definition at line 4 of file vector\&.cpp\&.
+.SS "template<typename T > \fBvector\fP< T >::\fBvector\fP (size_t count)\fC [explicit]\fP"
+
+.PP
+Constructs an container with count default-inserted instances\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcount\fP Number of instances\&. 
+.RE
+.PP
+
+.PP
+Definition at line 7 of file vector\&.cpp\&.
+.SS "template<typename T > template<typename InputIt > \fBvector\fP< T >::\fBvector\fP (InputIt first, InputIt last)"
+
+.PP
+Constructs the container with the contents of the range [first, last)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfirst\fP Iterator for the first element for insertion\&. 
+.br
+\fIlast\fP Iterator for the last element for insertion\&. 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file vector\&.cpp\&.
+.SS "template<typename T > \fBvector\fP< T >::\fBvector\fP (const \fBvector\fP< T > & other)"
+
+.PP
+Constructs the container with the deep copy of the contents of other\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP Container for copy\&. 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file vector\&.cpp\&.
+.SS "template<typename T > \fBvector\fP< T >::\fBvector\fP (std::initializer_list< T > ilist)"
+
+.PP
+Constructs the container with the contents of the initializer list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIilist\fP Initializer list for copy\&. 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file vector\&.cpp\&.
+.SS "template<typename T > \fBvector\fP< T >::~\fBvector\fP (void)\fC [virtual]\fP"
+
+.PP
+Desconstructor\&. 
+.PP
+Definition at line 36 of file vector\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > void \fBvector\fP< T >::assign (size_t count, const T & value)"
+
+.PP
+Assign value count times in the container\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcount\fP Times of assignment\&. 
+.br
+\fIvalue\fP Value to be assigned\&. 
+.RE
+.PP
+
+.PP
+Definition at line 205 of file vector\&.cpp\&.
+.SS "template<typename T > template<typename InputItr > void \fBvector\fP< T >::assign (InputItr first, InputItr last)"
+
+.PP
+Assign values from [first, last) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfirst\fP First element of array 
+.br
+\fIlast\fP Element after the last element of array 
+.RE
+.PP
+
+.PP
+Definition at line 217 of file vector\&.cpp\&.
+.SS "template<typename T > void \fBvector\fP< T >::assign (const std::initializer_list< T > ilist)"
+
+.PP
+Assign initializer list content to the container\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIilist\fP Initializer list for assignment\&. 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file vector\&.cpp\&.
+.SS "template<typename T > T & \fBvector\fP< T >::at (size_t pos)"
+
+.PP
+Returns a reference to the element at position pos in the vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position of an element in the container\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The element at the specified position in the container\&. 
+.RE
+.PP
+
+.PP
+Definition at line 168 of file vector\&.cpp\&.
+.SS "template<typename T > const T & \fBvector\fP< T >::at (size_t pos) const"
+
+.PP
+Returns a const reference to the element at position pos in the vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position of an element in the container\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The element at the specified position in the container\&. 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file vector\&.cpp\&.
+.SS "template<typename T > T & \fBvector\fP< T >::back (void)"
+
+.PP
+Returns a reference to the last element in the vector\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A reference to the last element in the vector container\&. 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file vector\&.cpp\&.
+.SS "template<typename T > const T & \fBvector\fP< T >::back (void) const"
+
+.PP
+Returns a const reference to the last element in the vector\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A const reference to the last element in the vector container\&. 
+.RE
+.PP
+
+.PP
+Definition at line 200 of file vector\&.cpp\&.
+.SS "template<typename T > \fBiterator\fP< T > \fBvector\fP< T >::begin (void)"
+
+.PP
+Return iterator to the beginning\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator to the first element\&. 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file vector\&.cpp\&.
+.SS "template<typename T > size_t \fBvector\fP< T >::capacity (void) const"
+
+.PP
+Returns the size of the storage space currently allocated for the vector\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The size of the currently allocated storage capacity in the vector, measured in terms of the number elements it can hold\&. 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file vector\&.cpp\&.
+.SS "template<typename T > \fBiterator\fP< const T > \fBvector\fP< T >::cbegin (void) const"
+
+.PP
+Returns a const_iterator to the beginning\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Const_iterator to the first element\&. 
+.RE
+.PP
+
+.PP
+Definition at line 116 of file vector\&.cpp\&.
+.SS "template<typename T > \fBiterator\fP< const T > \fBvector\fP< T >::cend (void) const"
+
+.PP
+Returns a const_iterator to the past-end\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator to the past-end\&. 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file vector\&.cpp\&.
+.SS "template<typename T > void \fBvector\fP< T >::clear (void)"
+
+.PP
+Removes all elements from the container (which are destroyed), leaving the container with a size of 0\&. 
+.PP
+Definition at line 401 of file vector\&.cpp\&.
+.SS "template<typename T > bool \fBvector\fP< T >::empty (void) const"
+
+.PP
+Returns whether the vector is empty\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+True if the container size is 0, false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 136 of file vector\&.cpp\&.
+.SS "template<typename T > \fBiterator\fP< T > \fBvector\fP< T >::end (void)"
+
+.PP
+Returns iterator to the past-end\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator to the past-end\&. 
+.RE
+.PP
+
+.PP
+Definition at line 111 of file vector\&.cpp\&.
+.SS "template<typename T > \fBiterator\fP< T > \fBvector\fP< T >::erase (\fBiterator\fP< T > pos)"
+
+.PP
+Removes the object at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position to erase\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator to the element that follows pos\&. 
+.RE
+.PP
+
+.PP
+Definition at line 357 of file vector\&.cpp\&.
+.SS "template<typename T> \fBiterator\fP<T> \fBvector\fP< T >::erase (\fBiterator\fP< const T > pos)"
+
+.PP
+Removes the object at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position to erase\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator to the element that follows pos\&. 
+.RE
+.PP
+
+.SS "template<typename T > \fBiterator\fP< T > \fBvector\fP< T >::erase (\fBiterator\fP< T > first, \fBiterator\fP< T > last)"
+
+.PP
+Removes the range [first, last)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfirst\fP Iterator for the first element of the range\&. 
+.br
+\fIlast\fP Iterator for the past-end element of the range\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An iterator pointing to the new location of the element that followed the last element erased by the function call\&. 
+.RE
+.PP
+
+.PP
+Definition at line 383 of file vector\&.cpp\&.
+.SS "template<typename T> \fBiterator\fP<T> \fBvector\fP< T >::erase (\fBiterator\fP< const T > first, \fBiterator\fP< const T > last)"
+
+.PP
+Removes the range [first, last)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfirst\fP Iterator for the first element of the range\&. 
+.br
+\fIlast\fP Iterator for the past-end element of the range\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An iterator pointing to the new location of the element that followed the last element erased by the function call\&. 
+.RE
+.PP
+
+.SS "template<typename T > T & \fBvector\fP< T >::front (void)"
+
+.PP
+Returns a reference to the first element in the vector\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A reference to the first element in the vector container\&. 
+.RE
+.PP
+
+.PP
+Definition at line 186 of file vector\&.cpp\&.
+.SS "template<typename T > const T & \fBvector\fP< T >::front (void) const"
+
+.PP
+Returns a const reference to the first element in the vector\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A const reference to the first element in the vector container\&. 
+.RE
+.PP
+
+.PP
+Definition at line 190 of file vector\&.cpp\&.
+.SS "template<typename T > \fBiterator\fP< T > \fBvector\fP< T >::insert (\fBiterator\fP< T > pos, const T & value)"
+
+.PP
+Inserts value at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position for insertion\&. 
+.br
+\fIvalue\fP Value for insertion\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator pointing to the inserted value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 258 of file vector\&.cpp\&.
+.SS "template<typename T> \fBiterator\fP<T> \fBvector\fP< T >::insert (\fBiterator\fP< const T > pos, const T & value)"
+
+.PP
+Inserts value at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position for insertion\&. 
+.br
+\fIvalue\fP Value for insertion\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator pointing to the inserted value\&. 
+.RE
+.PP
+
+.SS "template<typename T > template<typename InputItr > \fBiterator\fP< T > \fBvector\fP< T >::insert (\fBiterator\fP< T > pos, InputItr first, InputItr last)"
+
+.PP
+Inserts values from range at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position for insertion; 
+.br
+\fIfirst\fP First element of the range\&. 
+.br
+\fIlast\fP Position after the last element of the range\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator pointing to the first element inserted, 
+.RE
+.PP
+
+.PP
+Definition at line 314 of file vector\&.cpp\&.
+.SS "template<typename T> template<typename InputItr > \fBiterator\fP<T> \fBvector\fP< T >::insert (\fBiterator\fP< const T > pos, InputItr first, InputItr last)"
+
+.PP
+Inserts values from range at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position for insertion; 
+.br
+\fIfirst\fP First element of the range\&. 
+.br
+\fIlast\fP Position after the last element of the range\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator pointing to the first element inserted, 
+.RE
+.PP
+
+.SS "template<typename T > \fBiterator\fP< T > \fBvector\fP< T >::insert (\fBiterator\fP< T > pos, const std::initializer_list< T > ilist)"
+
+.PP
+Inserts values from an initializer list at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position for insertion\&. 
+.br
+\fIilist\fP List of elements\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator pointing to the first element inserted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 339 of file vector\&.cpp\&.
+.SS "template<typename T> \fBiterator\fP<T> \fBvector\fP< T >::insert (\fBiterator\fP< const T > pos, const std::initializer_list< T > ilist)"
+
+.PP
+Inserts values from an initializer list at position pos\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position for insertion\&. 
+.br
+\fIilist\fP List of elements\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator pointing to the first element inserted\&. 
+.RE
+.PP
+
+.SS "template<typename T > bool \fBvector\fP< T >::operator!= (const \fBvector\fP< T > & rhs) const"
+
+.PP
+Checks if the contents of lhs and rhs are equal, that is, they have the same number of elements and each element in lhs compares equal with the element in rhs at the same position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlhs\fP Container to compare with rhs\&. 
+.br
+\fIrhs\fP Container to compare with lhs\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the contents of the containers are not equal, false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 95 of file vector\&.cpp\&.
+.SS "template<typename T > \fBvector\fP< T > & \fBvector\fP< T >::operator= (const \fBvector\fP< T > & other)"
+
+.PP
+Copy assignment: copies all the elements from other into the container\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP Vector object of the same type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file vector\&.cpp\&.
+.SS "template<typename T > \fBvector\fP< T > & \fBvector\fP< T >::operator= (\fBvector\fP< T > && other)"
+
+.PP
+Move assignment: moves the elements of other into the container\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP Vector object of the same type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file vector\&.cpp\&.
+.SS "template<typename T > \fBvector\fP< T > & \fBvector\fP< T >::operator= (std::initializer_list< T > ilist)"
+
+.PP
+initializer list assignment: copies the elements of il into the container\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIilist\fP initializer_list object to copy content\&. 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file vector\&.cpp\&.
+.SS "template<typename T > bool \fBvector\fP< T >::operator== (const \fBvector\fP< T > & rhs) const"
+
+.PP
+Checks if the contents of lhs and rhs are equal, that is, they have the same number of elements and each element in lhs compares equal with the element in rhs at the same position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlhs\fP Container to compare with rhs\&. 
+.br
+\fIrhs\fP Container to compare with lhs\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the contents of the containers are equal, false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file vector\&.cpp\&.
+.SS "template<typename T > T & \fBvector\fP< T >::operator[] (size_t pos)"
+
+.PP
+Returns a reference to the element at position n in the vector container\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The element at the specified position in the vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 158 of file vector\&.cpp\&.
+.SS "template<typename T > const T & \fBvector\fP< T >::operator[] (size_t pos) const"
+
+.PP
+Returns a const reference to the element at position n in the vector container\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The element at the specified position in the vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 163 of file vector\&.cpp\&.
+.SS "template<typename T > void \fBvector\fP< T >::pop_back (void)"
+
+.PP
+Removes the last element of the container\&. 
+.PP
+Definition at line 253 of file vector\&.cpp\&.
+.SS "template<typename T > void \fBvector\fP< T >::push_back (const T & value)"
+
+.PP
+Insert value to the end of the container\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP Value to be copied\&. 
+.RE
+.PP
+
+.PP
+Definition at line 244 of file vector\&.cpp\&.
+.SS "template<typename T > void \fBvector\fP< T >::reserve (size_t new_cap)"
+
+.PP
+Requests that the vector capacity be at least enough to contain n elements\&. 
+.PP
+Definition at line 141 of file vector\&.cpp\&.
+.SS "template<typename T > void \fBvector\fP< T >::shrink_to_fit (void)"
+
+.PP
+Requests the container to reduce its capacity to fit its size\&. 
+.PP
+Definition at line 153 of file vector\&.cpp\&.
+.SS "template<typename T > size_t \fBvector\fP< T >::size (void) const"
+
+.PP
+Returns the number of elements in the vector\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The number of elements in the container\&. 
+.RE
+.PP
+
+.PP
+Definition at line 126 of file vector\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Vector from the source code\&.
